@@ -208,7 +208,7 @@ button{font-family:inherit;font-weight:bold;font-size:clamp(16px,3vw,20px);color
     "Si quelqu'un annonce une activité surprise, quelle sortie est la plus proche?",
     'À partir de quelle heure peut-on avoir exactement la même conversation une deuxième fois?'
   ];
-  const comments=["Plaisir insuffisant. On call les shots.","Plaisir acceptable, mais surveillé.","Enthousiasme possiblement simulé.","Niveau festif anormalement élevé.","Le lutin demande une vérification manuelle."];
+  const comments=["Plaisir insuffisant. On call les shots.","Plaisir acceptable, mais surveillé.","Enthousiasme possiblement simulé.","Niveau festif anormalement élevé.","Hmmmm."];
   let last=-1;
   document.getElementById('generate').addEventListener('click',function(){let i;do{i=Math.floor(Math.random()*phrases.length)}while(i===last);last=i;const p=document.getElementById('phrase');p.textContent='« '+phrases[i]+' »';p.animate([{transform:'scale(.96)',opacity:.2},{transform:'scale(1)',opacity:1}],{duration:300});document.getElementById('status').textContent='Phrase générée | Sujet approuvé par le comité';});
   function updateMeter(){const n=39+Math.floor(Math.random()*59);document.getElementById('meterText').textContent=n+' %';document.getElementById('meterFill').style.width=n+'%';document.getElementById('meterComment').textContent=comments[Math.floor(Math.random()*comments.length)];}
